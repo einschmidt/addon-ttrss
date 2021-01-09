@@ -1,16 +1,24 @@
 {
     "name": "TT-RSS",
-    "version": "test",
+    "version": "dev",
     "slug": "ttrss",
     "description": "RSS Aggregator",
     "url": "https://github.com/einschmidt/hassio-addons/tree/master/ttrss",
+    "ingress": true,
+    "ingress_port": 9999,
+    "panel_icon": "mdi:cart",
     "arch": ["armhf", "armv7", "amd64", "aarch64"],
-    "startup": "services",
+    "startup": "system",
     "boot": "auto",
     "hassio_api": true,
     "hassio_role": "default",
-    "map": ["share", "config", "ssl:rw"],
-    "host_network": true,
+    "map": ["ssl"],
+    "ports": {
+        "80/tcp": null
+    },
+    "ports_description": {
+        "80/tcp": "Web interface (Not required for Ingress)"
+    },
     "options": {
         "log_level": "info"
     },
