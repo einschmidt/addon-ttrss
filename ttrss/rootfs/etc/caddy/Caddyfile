@@ -1,7 +1,4 @@
 0.0.0.0
 root /var/www/ttrss
 log stdout
-errors stderr
-internal /tt-rss/cache
-internal /tt-rss/backups
-fastcgi / app:9000 php
+php_fastcgi 127.0.0.1:9000
