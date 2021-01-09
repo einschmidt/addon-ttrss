@@ -1,4 +1,4 @@
-0.0.0.0
-root /var/www/ttrss
+localhost
+root * /var/www/ttrss
 log stdout
 php_fastcgi 127.0.0.1:9000
