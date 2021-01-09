@@ -40,7 +40,10 @@ RUN \
 		/tmp/* \
 		/usr/local/share/.cache \
 		/usr/lib/node_modules \
-		/var/www/ttrss/.git
+		/var/www/ttrss/.git \
+	\
+	&& sed -i.bak 's/^listen = 127.0.0.1:9000/listen = 9000/' /etc/php7/php-fpm.d/www.conf \
+	&& sed -i.bak 's/\(memory_limit =\) 128M/\1 256M/' /etc/php7/php.ini
 
 # https://github.com/caddyserver/caddy/releases
 ENV CADDY_VERSION 2.3.0
