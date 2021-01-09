@@ -38,12 +38,12 @@ RUN \
 	&& apk del --no-cache --purge .build-dependencies \
 	\
 	&& find /var/www/ -type f -name "*.md" -depth -exec rm -f {} \; \
-    && rm -f -r \
-        /tmp/* \
-        /etc/nginx \
-        /usr/local/share/.cache \
-        /usr/lib/node_modules \
-	/var/www/ttrss/.git
+	&& rm -f -r \
+		/tmp/* \
+		/etc/nginx \
+		/usr/local/share/.cache \
+		/usr/lib/node_modules \
+		/var/www/ttrss/.git
 
 # Copy root filesystem
 COPY rootfs /
