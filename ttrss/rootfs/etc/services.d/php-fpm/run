@@ -3,36 +3,36 @@
 # Home Assistant Add-on: TT-RSS
 # Runs the PHP-FPM daemon
 # ==============================================================================
-export APP_KEY
-export APP_URL
-export DB_DATABASE
-export DB_HOST
-export DB_PASSWORD
-export DB_PORT
-export DB_USERNAME
+# export APP_KEY
+# export APP_URL
+# export DB_DATABASE
+# export DB_HOST
+# export DB_PASSWORD
+# export DB_PORT
+# export DB_USERNAME
 
-if bashio::config.has_value 'remote_mysql_host';then
-    DB_HOST=$(bashio::config "remote_mysql_host")
-    DB_DATABASE=$(bashio::config "remote_mysql_database")
-    DB_USERNAME=$(bashio::config "remote_mysql_username")
-    DB_PASSWORD=$(bashio::config "remote_mysql_password")
-    DB_PORT=$(bashio::config "remote_mysql_port")
-else
-    DB_HOST=$(bashio::services "mysql" "host")
-    DB_DATABASE=bookstack
-    DB_USERNAME=$(bashio::services "mysql" "username")
-    DB_PASSWORD=$(bashio::services "mysql" "password")
-    DB_PORT=$(bashio::services "mysql" "port")
-fi
+# if bashio::config.has_value 'remote_mysql_host';then
+#     DB_HOST=$(bashio::config "remote_mysql_host")
+#     DB_DATABASE=$(bashio::config "remote_mysql_database")
+#     DB_USERNAME=$(bashio::config "remote_mysql_username")
+#     DB_PASSWORD=$(bashio::config "remote_mysql_password")
+#     DB_PORT=$(bashio::config "remote_mysql_port")
+# else
+#     DB_HOST=$(bashio::services "mysql" "host")
+#     DB_DATABASE=bookstack
+#     DB_USERNAME=$(bashio::services "mysql" "username")
+#     DB_PASSWORD=$(bashio::services "mysql" "password")
+#     DB_PORT=$(bashio::services "mysql" "port")
+# fi
 
-if bashio::config.has_value 'proxy_host';then
-    APP_URL=$(bashio::config "proxy_host")
-fi
+# if bashio::config.has_value 'proxy_host';then
+#     APP_URL=$(bashio::config "proxy_host")
+# fi
 
-if bashio::config.equals 'log_level' 'debug' \
-    || bashio::config.equals 'log_level' 'trace' ;then
-    export APP_DEBUG=true
-fi
+# if bashio::config.equals 'log_level' 'debug' \
+#     || bashio::config.equals 'log_level' 'trace' ;then
+#     export APP_DEBUG=true
+# fi
 
 bashio::log.info "Installing/updating Database"
 # php /var/www/bookstack/artisan migrate --force
