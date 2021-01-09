@@ -43,7 +43,7 @@ RUN \
         /etc/nginx \
         /usr/local/share/.cache \
         /usr/lib/node_modules \
-		/var/www/ttrss/.git
+	/var/www/ttrss/.git
 
 # Copy root filesystem
 COPY rootfs /
