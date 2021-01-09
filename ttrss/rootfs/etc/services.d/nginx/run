@@ -1,0 +1,13 @@
+
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant  Add-on: TT-RSS
+# Runs the Nginx daemon
+# ==============================================================================
+
+# Wait for PHP-FPM to become available
+bashio::net.wait_for 9001
+
+bashio::log.info "Starting NGinx..."
+
+exec nginx
