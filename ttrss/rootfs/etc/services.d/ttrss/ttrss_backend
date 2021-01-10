@@ -6,9 +6,9 @@
 
 bashio::log.info "Starting TT-RSS update daemon..."
 
-while [ -e /var/www/ttrss/config.php ]
+while [ ! -e /var/www/ttrss/config.php ]
 do
-	echo waiting for config.php...
+	bashio::log.info "Waiting for config.php..."
 	sleep 3
 done
 
