@@ -27,6 +27,8 @@ RUN \
 		php7-posix \
 		php7-zip \
 		php7-openssl \
+		php7-iconv \
+		dcron \
 	\
 	&& apk add --no-cache --virtual .build-dependencies \
 		git \
