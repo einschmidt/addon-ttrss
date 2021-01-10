@@ -12,4 +12,4 @@ do
 	sleep 3
 done
 
-php /var/www/ttrss/update_daemon2.php
+php /var/www/ttrss/update.php -daemon
