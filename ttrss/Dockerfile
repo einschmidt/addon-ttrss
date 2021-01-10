@@ -18,6 +18,7 @@ RUN \
 		php7-pgsql \
 		php7-pdo_pgsql \
 		php7-pdo_mysql \
+		php7-mysqli \
 		php7-mbstring \
 		php7-intl \
 		php7-xml \
