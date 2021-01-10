@@ -1,0 +1,10 @@
+
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant  Add-on: TT-RSS
+# Runs the TT-RSS backend daemon
+# ==============================================================================
+
+bashio::log.info "Starting TT-RSS update daemon..."
+
+exec php /var/www/ttrss/update_daemon2.php
