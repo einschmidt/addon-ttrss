@@ -11,4 +11,4 @@ while [ ! -e /var/www/ttrss/config.php ]; do
 	sleep 3
 done
 
-php /var/www/ttrss/update.php -daemon
+exec php7 /var/www/ttrss/update.php -daemon
